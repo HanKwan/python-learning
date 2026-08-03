@@ -38,6 +38,9 @@
 # print(f"Your total amount will be {total_price} yen")
 
 
+import time
+
+
 price1 = 3132.43118
 price2 = -23.232
 price3 = 12.8987
@@ -48,3 +51,19 @@ print(f"{price3:+}")        # + sign in front of the number
 print(f"{price2:+}")        # the minus ones will show minus instead
 print(f"{price1:,}")        # each thousand will seperate by ,
 print(f"{price1:+,.2f}")    # can also combine
+
+
+# simple timer
+my_time = int(input("Enter time in sec: "))
+
+for i in range(my_time, 0, -1):     # can also use reversed(0, my_time) but better to use (my_time, 0, -1) for reversed countdown
+    seconds = i % 60
+    minutes = int((i / 60) % 60)    # used int() because the output type will always be float
+    hours = int(i / 3600)
+
+    print(f"{hours:02}:{minutes:02}:{seconds:02}")
+
+    time.sleep(1)
+
+print("Time's Up!")
+
